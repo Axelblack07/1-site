@@ -1,460 +1,557 @@
-
-body{
-  background-image: url(фонн.jpg);
-  min-height: 100vh;          
-  background-size: cover;    
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  margin: 0;                  
-  padding: 0;                 
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-
-.header{
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;               
-  left: 0;
-  width: 100%;         
-  background: #fff;     
-  z-index: 1000; 
-  
-
-}
-
-.logo{
-  text-align: center;
-  margin-left: 200px;
-}
-
-.logo h2{
-  font-size: larger;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.logo p{
+body {
+  background-image: url(фонн.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav{
-  margin-top: 25px;
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  padding: 15px 5%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav a{
-padding-right: 30px;
-text-decoration: none;
-font-size: 18px;
-color: black;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.logo {
+  text-align: center;
 }
 
-.nav a:hover{
+.logo h2 {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 5px;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.nav nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav a:hover {
   color: cyan;
 }
 
-.regis{
-  margin: 500px;
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: cyan;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ========== HERO SECTION ========== */
+.regis {
+  margin-top: 150px;
+  padding: 150px 5% 100px;
   text-align: center;
 }
 
-.regis p{
-  font-size: 22px;
+.regis p {
+  font-size: clamp(14px, 2vw, 22px);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  color: #333;
 }
 
-.regis h2{
-  font-size: 100px;
+.regis h2 {
+  font-size: clamp(40px, 8vw, 100px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 2px;
-  margin: 1px 0 20px 0;
+  margin: 10px 0 30px;
+  font-weight: bold;
 }
 
-.regis button{
+.regis button {
   background-color: black;
   color: white;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
+  padding: 12px 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.regis button:hover{
-  background-color: rgba(0, 0, 0, 0);
+.regis button:hover {
+  background-color: transparent;
   color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-#about{
+/* ========== ABOUT SECTION ========== */
+#about {
   display: flex;
-  flex-wrap:nowrap;
+  flex-wrap: wrap;
   background-color: white;
-  margin-top: 100px;            
-  left: 0;
-  width: 100%;             
+  margin-top: 50px;
+  align-items: center;
+  padding: 60px 5%;
 }
 
-#about h2{
-  font-size: 40px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  margin-top: 120px;
+#about h2 {
+  font-size: clamp(30px, 4vw, 40px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 30px;
+  line-height: 1.2;
 }
 
-.txt1{
-  font-size: 17px;
-  text-align: left;
-  margin-left: 450px;
-  margin-right: 100px;
+.txt1 {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 40px;
 }
 
-#img_Maksim{
-  width: 900px;
+.txt1 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
 }
 
-.txt1 button{
+.txt1 button {
   background-color: black;
   color: white;
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 45px;
+  padding: 10px 25px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
-.txt1 button:hover{
-  background-color: rgba(0, 0, 0, 0);
+.txt1 button:hover {
+  background-color: transparent;
   color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#txt2{
-  line-height: 1.5;
+#img_Maksim {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-#txt3{
-  line-height: 1.5;
-}
-
-.helper{
+/* ========== HELPER SECTION ========== */
+.helper {
   background-image: url(фон\ хелпер.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 5%;
 }
 
-.helper h2{
-  font-size: 40px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  margin-left: 450px;
-
-}
-
-.cont{
-  display: grid;
-  grid-template-columns: repeat(3, 450px);
-  grid-template-rows: repeat(2, 280px);
-  justify-content: center;
-  gap: 30px;
-}
-
-
-#box1{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-
-}
-
-#box1 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box1 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
+.helper h2 {
+  font-size: clamp(30px, 4vw, 40px);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box1 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box1 p{
-  font-size: 20px;
-}
-
-#box2{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-  
-}
-
-#box2 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box2 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box2 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box2 p{
-  font-size: 20px;
-}
-
-#box3{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-}
-
-#box3 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box3 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box3 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box3 p{
-  font-size: 20px;
-}
-
-#box4{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-  
-}
-
-#box4 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box4 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box4 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box4 p{
-  font-size: 20px;
-}
-
-#box5{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-  
-}
-
-#box5 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box5 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box5 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box5 p{
-  font-size: 20px;
-}
-
-#box6{
-  background-color: white;
-  padding: 10px 90px 30px 30px;
-  
-}
-
-#box6 h3{
-  font-size: 25px;
-  font-style: inherit;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#box6 button{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-top: 25px;
-}
-
-#box6 button:hover{
-  background-color: rgba(0, 0, 0, 0);
-  color: black;
-}
-
-#box6 p{
-  font-size: 20px;
-}
-
-footer{
-  background-color: DarkTurquoise;
-  height: 50vh;
-  padding-top: 50px;
-}
-
-.fftr1{
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  justify-content: center;
-}
-
-.soc{
-  font-size: 20px;
-  margin-right: 90px;
-}
-
-.soc h2{
   margin-bottom: 50px;
+  text-align: center;
+  line-height: 1.3;
 }
 
-.forms form{
+.cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.forms #name{
-  text-align: left;
-  padding: 10px 300px 5px 10px;
-  margin: 30px 5px 5px 5px;
+.cont > div {
+  background-color: white;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
 }
 
-.forms #mail{
-  text-align: left;
-  padding: 10px 300px 5px 10px;
-  margin: 5px;
+.cont > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.forms #number{
-  text-align: left;
-  padding: 10px 300px 5px 10px;
-  margin: 5px;
+.cont h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #333;
 }
 
-.forms #dop{
-  text-align: left;
-  padding: 10px 300px 100px 10px;
-  margin: 5px;
+.cont p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #666;
 }
-.forms button{
-background-color: black;
+
+.cont button {
+  background-color: black;
   color: white;
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 23px;
-  margin-left: 356px;
+  padding: 10px 25px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
-.forms button:hover{
-  background-color: rgba(0, 0, 0, 0);
+.cont button:hover {
+  background-color: transparent;
   color: black;
+  transform: translateY(-2px);
 }
 
-.prava{
+/* ========== FOOTER ========== */
+footer {
+  background-color: DarkTurquoise;
+  padding: 50px 5%;
+}
+
+.fftr1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.soc {
+  flex: 1;
+  min-width: 250px;
+}
+
+.soc h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.soc p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.soc a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 20px;
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.soc a i {
+  font-size: 30px;
+}
+
+.soc a:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.forms {
+  flex: 1;
+  min-width: 300px;
+}
+
+.forms form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.forms input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: inherit;
+}
+
+.forms input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.forms #dop {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.forms button {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 12px 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.forms button:hover {
+  background-color: transparent;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.prava {
   text-align: center;
-  margin: 30px 600px 0 0 ;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
 }
 
-/* Базовые стили */
+/* ========== МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ ========== */
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 3%;
+  }
+  
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  .nav nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .regis {
+    margin-top: 200px;
+    padding: 100px 3% 80px;
+  }
+  
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .txt1 {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  #img_Maksim {
+    max-width: 400px;
+  }
+  
+  .cont {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* ========== МЕДИА-ЗАПРОСЫ ДЛЯ ТЕЛЕФОНОВ ========== */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 5%;
+  }
+  
+  .logo h2 {
+    font-size: 1.2rem;
+  }
+  
+  .logo p {
+    font-size: 0.8rem;
+  }
+  
+  .nav nav {
+    gap: 10px;
+  }
+  
+  .nav a {
+    font-size: 0.85rem;
+  }
+  
+  .regis {
+    margin-top: 180px;
+    padding: 80px 5% 60px;
+  }
+  
+  .regis p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  
+  .regis h2 {
+    font-size: 40px;
+  }
+  
+  .regis button {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+  
+  #about {
+    padding: 40px 5%;
+  }
+  
+  #about h2 {
+    font-size: 28px;
+  }
+  
+  .txt1 p {
+    font-size: 0.95rem;
+  }
+  
+  #img_Maksim {
+    max-width: 100%;
+  }
+  
+  .helper {
+    padding: 40px 5%;
+  }
+  
+  .helper h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .cont {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cont > div {
+    padding: 25px;
+  }
+  
+  .cont h3 {
+    font-size: 1.3rem;
+  }
+  
+  .fftr1 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .soc h2 {
+    font-size: 1.5rem;
+  }
+  
+  .soc p {
+    font-size: 0.9rem;
+  }
+  
+  footer {
+    padding: 40px 5%;
+  }
+}
+
+/* ========== МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ ========== */
+@media screen and (max-width: 480px) {
+  .nav nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .regis {
+    margin-top: 220px;
+    padding: 60px 5% 50px;
+  }
+  
+  .regis p {
+    font-size: 11px;
+  }
+  
+  .regis h2 {
+    font-size: 32px;
+  }
+  
+  #about h2,
+  .helper h2,
+  .soc h2 {
+    font-size: 24px;
+  }
+  
+  .cont h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cont p {
+    font-size: 1rem;
+  }
+  
+  .soc a i {
+    font-size: 25px;
+  }
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* планшет */
-@media (max-width: 1024px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+/* Анимация появления элементов */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* телефон */
-@media (max-width: 600px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* планшет */
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 2rem;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* телефон */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-  nav ul {
-    display: none; /* скрыть меню */
-  }
-  .burger {
-    display: block; /* показать бургер-иконку */
-  }
+.cont > div {
+  animation: fadeIn 0.6s ease-out;
 }
