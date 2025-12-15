@@ -402,3 +402,59 @@ background-color: black;
   text-align: center;
   margin: 30px 600px 0 0 ;
 }
+
+/* Базовые стили */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* планшет */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* телефон */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* планшет */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* телефон */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    display: none; /* скрыть меню */
+  }
+  .burger {
+    display: block; /* показать бургер-иконку */
+  }
+}
